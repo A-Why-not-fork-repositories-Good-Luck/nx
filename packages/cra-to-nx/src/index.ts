@@ -27,6 +27,11 @@ export const commandsObject = yargs
     describe: 'Use Vite and Vitest (instead of Webpack and Jest)',
     default: false,
   })
+  .option('nested', {
+    type: 'boolean',
+    describe: 'Use nested library folder structure, no apps folder',
+    default: false,
+  })
   .help();
 
 createNxWorkspaceForReact(commandsObject.argv).catch((e) => {
